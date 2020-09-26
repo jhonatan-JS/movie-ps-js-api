@@ -28,10 +28,8 @@ module.exports = {
 
 
     } catch (error) {
-      let erro = error.errno == 19 ? "Email já cadastrado" : "Não foi possivel cadastrar sua conta" ;
-      response.status(400).json({ error: erro });
+      error.errno == 19 ? "Email já cadastrado" : "Não foi possivel cadastrar sua conta";
     }
-
     return response.json(`Olá ${nome}`);
   }
 }
