@@ -23,8 +23,6 @@ module.exports = {
         const profiles = await connection("profiles")
           .where("account_id", account_id)
           .select("*");
-        console.log(profiles);
-        console.log(profiles.length);
 
         if (profiles.length < 4) {
           await connection("profiles").insert({ nome, account_id });
@@ -33,7 +31,6 @@ module.exports = {
           mensagemRetorno = "Pode conter apenas 4 perfis";
         }
       } catch (error) {
-        console.log(error);
         mensagemRetorno = "Erro ao criar perfil";
       }
     }

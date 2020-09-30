@@ -10,7 +10,7 @@ module.exports = {
     .first();
 
     if (!account) {
-      return response.status(400).json({ error: 'Nenhuma conta encontrada com este Email' })
+      return response.status(400).json({ error: 'Nenhuma conta encontrada com este Email' });
     }
 
     return response.json(account);
